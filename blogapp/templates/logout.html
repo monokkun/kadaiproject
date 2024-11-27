@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログアウト</title>
+</head>
+<body>
+    <h1>ログアウトしますか？</h1>
+    <form method="post" action="{% url 'blogapp:logout' %}">
+        {% csrf_token %}
+        <button type="submit">ログアウト</button>
+    </form>
+    <a href="{% url 'blogapp:index' %}">キャンセル</a>
+</body>
+</html>

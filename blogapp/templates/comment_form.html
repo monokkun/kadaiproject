@@ -1,0 +1,8 @@
+
+<h1>コメントを追加</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">コメントする</button>
+  <a href="{% url 'blogapp:post_list' %}">キャンセル</a>
+</form>

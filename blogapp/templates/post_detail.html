@@ -1,0 +1,17 @@
+<h1>{{ object.title }}</h1>
+<p>{{ post.content }}</p>
+<p>投稿者: {{ post.author }} at {{ post.created_at }}</p>
+<hr>
+<h2>コメント</h2>
+<ul>
+  {% if comments %}
+    <ul>
+        {% for comment in comments %}
+            <li><strong>{{ comment.author }}</strong>: {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+  {% else %}
+    <p>コメントはまだありません。</p>
+  {% endif %}
+</ul>
+<a href="{% url 'blogapp:add_comment' post.pk %}">コメントを追加</a>
